@@ -1,14 +1,15 @@
-from argparse import Action,ArgumentParser
+from argparse import Action, ArgumentParser
 
 
 class DriverAction(Action):
-    def __call__(self,parser, namespace, values, option_string=None):
-        driver, destination= values
+    def __call__(self, parser, namespace, values, option_string=None):
+        driver, destination = values
         namespace.driver = driver.lower()
-        namespace.destination= destination
+        namespace.destination = destination
+
 
 def create_parser():
-    parser= ArgumentParser(description="""
+    parser = ArgumentParser(description="""
     Back up PostgreSQL databases locally or to AWS S3
     """)
 
@@ -19,4 +20,4 @@ def create_parser():
                         action=DriverAction,
                         required=True)
 
-    return  parser
+    return parser
