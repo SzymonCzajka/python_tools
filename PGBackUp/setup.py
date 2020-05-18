@@ -11,5 +11,12 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/SzymonCzajka/python-tools/pgbackup',
-    packages=find_packages('scr')
+    packages=find_packages('scr'),
+    package_dir={'': 'src'},
+    install_requires=['boto3'],
+    entry_points={
+        'console_scripts': [
+            'pgbackup=pgbackup.cli:main',
+        ],
+    }
 )
