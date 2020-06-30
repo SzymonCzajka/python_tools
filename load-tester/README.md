@@ -1,4 +1,4 @@
-# ;oad-testing-cli
+# Load-testing-cli
 
 A simple CLI load testing tool.
 
